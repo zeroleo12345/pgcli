@@ -1,0 +1,9 @@
+## set dockerhub token and publish
+1. add dockerhub token at https://app.docker.com/accounts/zeroleo12345/settings/personal-access-tokens
+2. no need create repo manually
+3. manually trigger CI or git push tags
+4. CI create image repo and publish image automatically
+
+
+## check dockerhub repository
+https://hub.docker.com/repositories/zeroleo12345
