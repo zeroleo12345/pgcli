@@ -7,7 +7,8 @@ WORKDIR /home/pgcli
 USER pgcli
 
 COPY --chown=pgcli:pgcli requirements.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir --no-warn-script-location pgcli==4.4.0 psycopg[binary,pool]==3.3.2
+RUN pip install --no-cache-dir --no-warn-script-location --user -r /tmp/requirements.txt && \
+    rm -f /tmp/requirements.txt
 
 ENV PATH=/home/pgcli/.local/bin:$PATH
 
