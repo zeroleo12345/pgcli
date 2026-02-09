@@ -6,10 +6,11 @@ RUN apk add --no-cache postgresql-client && \
 WORKDIR /home/pgcli
 USER pgcli
 
+RUN mkdir -p /home/pgcli/.config/pgcli
+
 COPY --chown=pgcli:pgcli requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir --no-warn-script-location --user -r /tmp/requirements.txt && \
-    rm -f /tmp/requirements.txt &&
-    mkdir -p /home/pgcli/.config/pgcli
+    rm -f /tmp/requirements.txt
 
 ENV PATH=/home/pgcli/.local/bin:$PATH
 
